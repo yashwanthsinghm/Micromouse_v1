@@ -1,6 +1,6 @@
 # Micro Mouse Version 1
 ## Brief Documentation for the Code
-The Micromouse_v1 GitHub repository contains several key files:
+The Micromouse_v1 repository contains several key files:
 
 **API.ino**            : Interface for robot commands and status.
 

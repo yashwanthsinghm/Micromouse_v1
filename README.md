@@ -22,3 +22,7 @@ The Micromouse_v1 repository contains several key files:
 
 **wall_update.ino**    : Updates wall data for maze mapping.
 
+## Hardware Design
+
+![Design](image/design_2.png)
+

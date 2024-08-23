@@ -14,7 +14,6 @@ void set_cost() {
       else {
         cost[x - 1][y - 1] = (x + y - n - 2 + r - dev_x + dev_y);
       }
-      setText(x - 1, y - 1, String(cost[x - 1][y - 1]));
     }
   }
 }

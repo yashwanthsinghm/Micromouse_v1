@@ -1,57 +1,28 @@
 void update_wall() {
+//  WebSerial.printf("Front = %d,RightIR = %d,LeftIR = %d\n", analogRead(34), analogRead(35),analogRead(32));
   if (wallFront()) {
     wall_data[curr_x * 16 + curr_y][((theta % 360) / 90) % 4] = 1;
-    if (theta % 360 == 0) {
-      setWall(curr_x, curr_y, 'n');
-    }
-    else if (theta % 360 == 90) {
-      setWall(curr_x, curr_y, 'e');
-    }
-    else if (theta % 360 == 180) {
-      setWall(curr_x, curr_y, 's');
-    }
-    else {
-      setWall(curr_x, curr_y, 'w');
-    }
+//    WebSerial.printf("Updated wall Front 1");
   }
   else {
     wall_data[curr_x * 16 + curr_y][((theta % 360) / 90) % 4] = 0;
+//     WebSerial.printf("Updated wall Front 0");
   }
   if (wallRight()) {
     wall_data[curr_x * 16 + curr_y][((theta % 360) / 90 + 1) % 4] = 1;
-    if (theta % 360 == 0) {
-      setWall(curr_x, curr_y, 'e');
-    }
-    else if (theta % 360 == 90) {
-      setWall(curr_x, curr_y, 's');
-    }
-    else if (theta % 360 == 180) {
-      setWall(curr_x, curr_y, 'w');
-    }
-    else {
-      setWall(curr_x, curr_y, 'n');
-    }
+//     WebSerial.printf("Updated wall Right 1");
   }
   else {
     wall_data[curr_x * 16 + curr_y][((theta % 360) / 90 + 1) % 4] = 0;
+//     WebSerial.printf("Updated wall Right 0");
   }
   if (wallLeft()) {
     wall_data[curr_x * 16 + curr_y][((theta % 360) / 90 + 3) % 4] = 1;
-    if (theta % 360 == 0) {
-      setWall(curr_x, curr_y, 'w');
-    }
-    else if (theta % 360 == 90) {
-      setWall(curr_x, curr_y, 'n');
-    }
-    else if (theta % 360 == 180) {
-      setWall(curr_x, curr_y, 'e');
-    }
-    else {
-      setWall(curr_x, curr_y, 's');
-    }
+//     WebSerial.printf("Updated wall Left 1");
   }
   else {
     wall_data[curr_x * 16 + curr_y][((theta % 360) / 90 + 3) % 4] = 0;
+//     WebSerial.printf("Updated wall Left 0");
   }
 }
 

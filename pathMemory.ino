@@ -26,8 +26,38 @@ int checkCounter(int num) {
   }
 }
 
-void colorPath() {
-  for (int i = 0; i < counter; i++) {
-    setColor(path[i] % 16, path[i] / 16, 'G');
+void copyFromEEPROM()
+{
+  //EEPROM.commit();
+ // WebSerial.printf("copyFromEEPROM");
+  for (short i = 0; i < EEPROM_SIZE; i++)
+  {
+    //    EEPROM.commit();
+    path[i] =  EEPROM.read(i);
+  //  WebSerial.printf("EEPROM path[i]=%d\n", path[i]);
+      delay(100);
   }
+  delay(100);
+//  counter =  EEPROM.read(150);
+//  WebSerial.printf("EEPROM counter=%d\n", counter);
+
+}
+
+
+void copyToEEPROM()
+{
+  //WebSerial.printf("copyToEEPROM");
+  for (short i = 0; i < EEPROM_SIZE; i++)
+  {
+    delay(100);
+    EEPROM.write(i, path[i]) ;
+    EEPROM.commit();
+  //  WebSerial.printf("path[i]=%d\n", path[i]);
+  }
+  delay(100);
+//     WebSerial.printf("counter before copying %d\n", counter);
+//  WebSerial.printf("copyCounterToEEPROM");
+//  EEPROM.write(150, counter) ;
+//  EEPROM.commit();
+
 }
